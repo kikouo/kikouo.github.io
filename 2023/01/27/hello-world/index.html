@@ -1,0 +1,470 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>
+            菜菜学习中的歌 | 菜菜的小屋
+        </title>
+        <meta name="author" content="缸子的奶爸">
+        <meta name="description" content="欢迎大家">
+        <meta name="keywords" content="">
+        <link rel="icon" href="">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.2.0/js/all.min.js"></script>
+        <script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        
+                <link rel="stylesheet" href="/css/fonts.min.css">
+                <link rel="stylesheet" href="/css/particlex.css">
+                <link rel="stylesheet" href="/css/bootstrap.min.css">
+                
+                    <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <canvas id="fireworks"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483647"></canvas>
+
+        <div id="loading"
+            style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:rgb(255, 255, 255);transition:opacity 0.3s ease-out">
+            <div
+                style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center;">
+                <div id="loadcontent" style="width:50vmin;
+                    height:50vmin;
+                    border-radius:50%;
+                    border:4px solid #f3f3f3;
+                    border-radius:50%;
+                    border-top:16px solid #f7b3f8;
+                    display:flex;
+                    animation:load 1s linear;">
+                </div>
+                <div style=" 
+                justify-content:center;
+                text-align:center;
+                position:absolute;
+                display:flex;
+                width:30vmin;
+                height:30vmin;
+                overflow : hidden;
+                font-family:'Courier New', Courier, monospace;
+                padding:50px;">
+                    <div>
+                        <h2>今天天气不错捏 !</h2>
+                        <h2>菜菜正在睡觉捏zzzZ...</h2>
+                        <p style="word-break:keep-all">如果长时间没反应请更换浏览器或刷新</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">菜菜的小屋</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-dog fa-fw"></i>
+            <span>&ensp;关于菜菜</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-headphones fa-fw"></i>
+            <span>&ensp;在学的歌</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;菜菜的小屋</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-dog fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于菜菜</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-headphones fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">在学的歌</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>菜菜学习中的歌 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2023/1/27
+        </span>
+        
+        
+    </div>
+    <div class="content" v-pre>
+        <table>
+<thead>
+<tr>
+<th>歌名</th>
+<th>歌手</th>
+<th>歌曲语言</th>
+<th>付费</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>过份</td>
+<td>许秋怡</td>
+<td>粤语</td>
+<td>提督学歌</td>
+<td>本子giegie希望菜菜学会</td>
+</tr>
+<tr>
+<td>借月</td>
+<td>王天阳</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>挽心希望菜菜学会</td>
+</tr>
+<tr>
+<td>撒野</td>
+<td>凯瑟喵</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>闲云知月希望菜菜学会</td>
+</tr>
+<tr>
+<td>落英</td>
+<td>银临</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>嘎嘎希望菜菜学会</td>
+</tr>
+<tr>
+<td>大吉</td>
+<td>秋绘</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>ntr希望菜菜学会</td>
+</tr>
+<tr>
+<td>睡公主</td>
+<td>邓紫棋</td>
+<td>粤语</td>
+<td>舰长学歌</td>
+<td>462希望菜菜明年前学会</td>
+</tr>
+<tr>
+<td>喜帖街</td>
+<td>谢安琪</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>康康希望菜菜学会</td>
+</tr>
+<tr>
+<td>何须问</td>
+<td>银临</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>熊大希望菜菜学会</td>
+</tr>
+<tr>
+<td>闪烁着</td>
+<td>季彦霖</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>珍妮希望菜菜学会</td>
+</tr>
+<tr>
+<td>小嫦娥</td>
+<td>安子与九妹</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>菜菜自愿给大鹅学歌</td>
+</tr>
+<tr>
+<td>灰姑娘</td>
+<td>梁咏琪</td>
+<td>粤语</td>
+<td>提督学歌</td>
+<td>缸爸giegie希望菜菜学会</td>
+</tr>
+<tr>
+<td>你听得到</td>
+<td>周杰伦</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>砒霜希望菜菜学会</td>
+</tr>
+<tr>
+<td>还在流浪</td>
+<td>周杰伦</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>462希望菜菜明年前学会</td>
+</tr>
+<tr>
+<td>入画江南</td>
+<td>黄龄</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>菜菜自愿给汤凤学歌</td>
+</tr>
+<tr>
+<td>爱丫爱丫</td>
+<td>三本目</td>
+<td>粤语</td>
+<td>舰长学歌</td>
+<td>十八岁希望菜菜学会</td>
+</tr>
+<tr>
+<td>我欢喜喜欢你</td>
+<td>焦迈奇</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>奶黄包希望菜菜学会</td>
+</tr>
+<tr>
+<td>带我去找夜生活</td>
+<td>告五人</td>
+<td>国语</td>
+<td>舰长学歌</td>
+<td>奶黄包希望菜菜学会</td>
+</tr>
+<tr>
+<td>where Did U Go</td>
+<td>邓紫棋</td>
+<td>粤语</td>
+<td>舰长学歌</td>
+<td>462希望菜菜明年前学会</td>
+</tr>
+<tr>
+<td>爱情</td>
+<td>莫文蔚</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>兄妹</td>
+<td>陈奕迅</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>最爱</td>
+<td>周敏慧</td>
+<td>粤语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>暗号</td>
+<td>周杰伦</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>遇萤</td>
+<td>橙翼</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>兰亭序</td>
+<td>周杰伦</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>闹哄哄</td>
+<td>郁可唯</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>吴哥窟</td>
+<td>吴雨霏</td>
+<td>粤语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>一格格</td>
+<td>卫兰</td>
+<td>粤语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>勾指起誓</td>
+<td>洛天依</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>夏日海岛</td>
+<td>Bell玲惠</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>长安姑娘</td>
+<td>李常超</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>绝世舞姬</td>
+<td>张晓涵</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>私奔到月球</td>
+<td>五月天</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>吹梦到西洲</td>
+<td>黄诗扶</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>下完这场雨</td>
+<td>后弦</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>分分钟需要你</td>
+<td>莫文蔚</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>我也不想这样</td>
+<td>徐佳莹</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>晚夜微雨问海棠</td>
+<td>陈亦洺</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+<tr>
+<td>父亲写的散文诗</td>
+<td>许飞</td>
+<td>国语</td>
+<td>菜菜自学</td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    
+</div>
+                             
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2022 - 2023 菜菜的小屋
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @缸子的奶爸
+        </div>
+        <div></div>
+        <div>给缸爸点点关注 <a target="_blank" rel="noopener" href="https://space.bilibili.com/5076247">Bilibili_缸子的奶爸</a></div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/clipboard.min.js"></script>
+        <script src="/js/particlex.min.js"></script>
+        <script src="/js/fireworks.js"></script>
+        <script src="/js/copy.min.js"></script>
+        <script src="/js/showimg.min.js"></script>
+        <script src="/js/filter.min.js"></script>
+        <script src="/js/time.min.js"></script>
+        
+
+    </body>
+
+    </html>
