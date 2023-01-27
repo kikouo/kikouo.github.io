@@ -340,8 +340,6 @@ pre .copycode {
     justify-content: center;
     text-align: center;
     color: #333;
-
-    border-radius: 50%;
 }
 
 #home-background {
@@ -671,7 +669,7 @@ pre .copycode {
     display: inline-block;
     margin-left: 30px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(196, 196, 196);
 }
 
 #menu .desktop-menu a span {
@@ -698,7 +696,7 @@ pre .copycode {
 #menu .phone-menu .title {
     z-index: 104;
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: rgb(212, 208, 208);
 }
 
 #menu .phone-menu .items {
@@ -707,7 +705,7 @@ pre .copycode {
 }
 
 #menu .phone-menu .items a {
-    color: rgb(255, 255, 255);
+    color: rgb(196, 196, 196);
 }
 
 #menu .phone-menu .items .item {
@@ -1318,21 +1316,20 @@ footer .footer-icon {
     }
 
     #home-head .home-info {
-        width: 700px;
-        height: 700px;
-        background:url("/images/clock.png");
-        background-size: contain;
-        background-repeat: no-repeat;
+        width: 800px;
+        height: 800px;
     }
 
     #home-head .home-info .info {
-        width: 700px;
-        height: 700px;
+        width: 800px;
+        height: 800px;
+        background:url("/images/clock.png");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     #home-head .home-info .info .wrap {
         padding: 25px;
-        margin-left: -35px;
     }
 
     #home-head .home-info .info .wrap h3 {
@@ -1346,7 +1343,7 @@ footer .footer-icon {
         font-size: 20px;
         font-weight: bold;
         font-family:'宋体';
-        color: white;
+        color: rgb(255, 255, 255);
         margin: 20px 0;
     }
 
@@ -1453,7 +1450,9 @@ footer .footer-icon {
         margin: auto;
         width: 350px;
         height: 350px;
-        background: rgba(224, 240, 255, 0.651);
+        background: url(/images/clock.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     #home-head .home-info .info .wrap {
@@ -1461,19 +1460,19 @@ footer .footer-icon {
     }
 
     #home-head .home-info .info .wrap h1 {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: bold;
         font-family: "Poppins", "Noto Sans SC", sans-serif;
         margin-bottom: 10px;
     }
 
     #home-head .home-info .info .wrap h3 {
-        font-size: 20px;
-        margin: 10px 0;
+        display: none;
     }
 
     #home-head .home-info .info .wrap h5 {
-        font-size: 14px;
+        color:white;
+        font-size: 12px;
         margin: 20px 0;
     }
 
